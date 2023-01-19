@@ -19,6 +19,44 @@
     /* typora GUI config */
     --sidebar-font-color : black;
     --main-panel-font-color : black;
+
+    --dark0_x:  46,52,64; /* #2e3440 */
+    --dark0:    rgb(var(--dark0_x));
+    --dark1_x:  59,66,82; /* #3b4252 */
+    --dark1:    rgb(var(--dark1_x));
+    --dark2_x:  67,76,94; /* #434c5e */
+    --dark2:    rgb(var(--dark2_x));
+    --dark3_x:  76,86,106; /* #4c566a */
+    --dark3:    rgb(var(--dark3_x));
+
+    --light0_x: 216,222,233; /* #d8dee9 */
+    --light0:   rgb(var(--light0_x));
+    --light1_x: 229,233,240; /* #e5e9f0 */
+    --light1:   rgb(var(--light1_x));
+    --light2_x: 236,239,244; /* #eceff4 */
+    --light2:   rgb(var(--light2_x));
+    --light3_x: 255,255,255; /* #ffffff */
+    --light3:   rgb(var(--light3_x));
+
+    --frost0_x: 143,188,187; /* #8fbcbb */
+    --frost0:   rgb(var(--frost0_x));
+    --frost1_x: 146 128 244; /* #88c0d0 */
+    --frost1:   rgb(var(--frost1_x));
+    --frost2_x: 129,161,193; /* #81a1c1 */
+    --frost2:   rgb(var(--frost2_x));
+    --frost3_x: 94,129,172; /* #5e81ac */
+    --frost3:   rgb(var(--frost3_x));
+
+    --red_x:    191,97,106; /* #bf616a */
+    --red:      rgb(var(--red_x));
+    --orange_x: 208,135,112; /* #d08770 */
+    --orange:   rgb(var(--orange_x));
+    --yellow_x: 235,203,139; /* #ebcb8b */
+    --yellow:   rgb(var(--yellow_x));
+    --green_x:  163,190,140; /* #a3be8c */
+    --green:    rgb(var(--green_x));
+    --purple_x: 180,142,173; /* #b48ead */
+    --purple:   rgb(var(--purple_x));
 }
 
 @font-face {
@@ -45,6 +83,29 @@
 body {
     font-family: "Roboto Slab", "SimHei", serif;
     /* background-color: rgb(255, 255, 255); */
+    --accent-h: 354; /* --red #bf616a */
+    --accent-s: 42%;
+    --accent-l: 56%;
+
+    --link-decoration:                none;
+    --link-decoration-hover:          none;
+    --link-external-decoration:       none;
+    --link-external-decoration-hover: none;
+
+    --tag-decoration:                 none;
+    --tag-decoration-hover:           underline;
+    --tag-padding-x:                  .5em;
+    --tag-padding-y:                  .2em;
+    --tag-radius:                     .5em;
+
+    --tab-font-weight:                600;
+    --bold-weight:                    600;
+
+    --checkbox-radius:                0;
+
+    /* --list-indent:                    2em; */
+
+    --embed-border-left: 6px double var(--interactive-accent);
 }
 
 html {
@@ -54,218 +115,211 @@ html {
 	-webkit-font-smoothing: initial;
 }
 
+.theme-dark
+{
+    --color-red-rgb:                 var(--red_x);
+    --color-red:                     var(--red);
+    --color-purple-rgb:              var(--purple_x);
+    --color-purple:                  var(--purple);
+    --color-green-rgb:               var(--green_x);
+    --color-green:                   var(--green);
+    --color-cyan-rgb:                var(--frost1_x);
+    --color-cyan:                    var(--frost1);
+    --color-blue-rgb:                var(--frost3_x);
+    --color-blue:                    var(--frost3);
+    --color-yellow-rgb:              var(--yellow_x);
+    --color-yellow:                  var(--yellow);
+    --color-orange-rgb:              var(--orange_x);
+    --color-orange:                  var(--orange);
+    /* --color-pink:                    var(--purple); */
 
-/* write is a wrapper of writable region */
-#write {
-    position: static;
-    /* width: 90%; */
-    max-width: 1000px;
-    min-height: calc(100vh - 6rem);
-	min-width: calc(100vw - 45rem);
-    line-height: 1.6;
-    transform: none;
-    height: auto;
-    caret-color: var(--main-color);
+    --background-primary:            var(--dark0);
+    --background-primary-alt:        var(--dark0);
+    --background-secondary:          var(--dark1);
+    --background-secondary-alt:      var(--dark2);
+    --background-modifier-border:    var(--dark2);
+
+    --cursor-line-background:        rgba(var(--dark3_x), 0.5);
+
+    --text-normal:                   var(--light2);
+    --text-faint:                    var(--light0);
+    --text-muted:                    var(--light1);
+
+    --h1-color:                      var(--red);
+    --h2-color:                      var(--yellow);
+    --h3-color:                      var(--green);
+    --h4-color:                      var(--purple);
+    --h5-color:                      var(--frost0);
+    --h6-color:                      var(--frost2);
+
+    --text-highlight-bg:             var(--frost1);
+    --text-highlight-fg:             var(--dark0);
+
+    --text-accent:                   var(--orange);
+    --text-accent-hover:             var(--frost2);
+
+    --tag-color:                     var(--frost0);
+    --tag-background:                var(--dark2);
+    --tag-background-hover:          var(--dark1);
+
+    --titlebar-text-color-focused:   var(--red);
+
+    --inline-title-color:            var(--yellow);
+
+    --bold-color:                    var(--yellow);
+    --italic-color:                  var(--yellow);
+
+    --checkbox-color:                var(--frost0);
+    --checkbox-color-hover:          var(--frost0);
+    --checkbox-border-color:         var(--frost0);
+    --checkbox-border-color-hover:   var(--frost0);
+    --checklist-done-color:          rgba(var(--light2_x), 0.5);
+
+    --table-header-background:       hsl(220, 16%, 16%);
+    --table-header-background-hover: var(--dark3);
+    --table-row-even-background:     hsl(220, 16%, 20%);
+    --table-row-odd-background:      hsl(220, 16%, 24%);
+    --table-row-background-hover:    var(--dark3);
+
+    --text-selection:                rgba(var(--red_x), 0.6);
+    --flashing-background:           rgba(var(--red_x), 0.3);
+
+    --code-normal:                   var(--frost1);
+    --code-background:               var(--dark1);
+
+    --mermaid-note:                  var(--frost3);
+    --mermaid-loopline:              var(--frost1);
+
+    --icon-color-hover:              var(--red);
+    --icon-color-focused:            var(--frost2);
+
+    --nav-item-color-hover:          var(--red);
+    --nav-item-color-active:         var(--frost2);
+    --nav-file-tag:                  rgba(var(--yellow_x), 0.9);
+
+    --graph-line:                    var(--dark3);
+    --graph-node:                    var(--light3);
+    --graph-node-tag:                var(--red);
+    --graph-node-attachment:         var(--green);
+
+    --calendar-hover:                var(--red);
+    --calendar-background-hover:     var(--dark3);
+    --calendar-week:                 var(--yellow);
+    --calendar-today:                var(--yellow);
+
+    --dataview-key:                  var(--text-faint);
+    --dataview-key-background:       rgba(var(--frost2_x), 0.3);
+    --dataview-value:                var(--text-faint);
+    --dataview-value-background:     rgba(var(--red_x), 0.3);
+
+    --tab-text-color-focused-active:         var(--frost2);
+    --tab-text-color-focused-active-current: var(--red);
 }
 
-#write h1, h2, h3, h4, h5, h6 {
-    color: var(--font-color);
-    font-family: var(--title-font);
-    font-weight: 800;
-    line-height: 1.5;
-    margin: 0 0 1em 0;
-}
+.theme-light
+{
+    --color-red-rgb:                 var(--red_x);
+    --color-red:                     var(--red);
+    --color-purple-rgb:              var(--purple_x);
+    --color-purple:                  var(--purple);
+    --color-green-rgb:               var(--green_x);
+    --color-green:                   var(--green);
+    --color-cyan-rgb:                var(--frost1_x);
+    --color-cyan:                    var(--frost1);
+    --color-blue-rgb:                var(--frost3_x);
+    --color-blue:                    var(--frost3);
+    --color-yellow-rgb:              var(--yellow_x);
+    --color-yellow:                  var(--yellow);
+    --color-orange-rgb:              var(--orange_x);
+    --color-orange:                  var(--orange);
+    /* --color-pink:                    var(--purple); */
 
-#write h1 {
-    font-size: 40px;
-    margin: 0 0 1.0em 0;
-    line-height: 1.3; 
-    border-bottom: solid 3px var(--main-color);
-    width: fit-content;
-}
+    --background-primary:            var(--light3);
+    --background-primary-alt:        var(--light3);
+    --background-secondary:          var(--light2);
+    --background-secondary-alt:      var(--light1);
+    --background-modifier-border:    var(--light1);
 
-#write h2 {
-    font-size: 28px;
-    border-radius: .5em;
-    width: fit-content;
-}
+    --cursor-line-background:        rgba(var(--light0_x), 0.2);
 
-#write h2::before {
-    content: "H2";
-    border-radius: .3em;
-    font-size: .8em;
-    padding: 3px 7px;
-    margin-right: 15px;
-    background-color: var(--main-color);
-    color: white;
-}
+    --text-normal:                   var(--dark2);
+    --text-faint:                    var(--dark0);
+    --text-muted:                    var(--dark1);
 
-#write h3 {
-    font-size: 24px;
-    border-radius: .3em; 
-    width: fit-content;
-}
+    --h1-color:                      var(--red);
+    --h2-color:                      var(--yellow);
+    --h3-color:                      var(--green);
+    --h4-color:                      var(--purple);
+    --h5-color:                      var(--frost0);
+    --h6-color:                      var(--frost2);
 
-#write h3::before {
-    content: "H3";
-    color : white;
-    font-size: 0.8em;
-    background-color: var(--main-color);
-    border-radius: .3em;
-    margin-right: 12px;
-    padding: 4px 7px;
-}
+    --text-highlight-bg:             var(--yellow);
+    --text-highlight-fg:             var(--dark0);
 
-#write h4 {
-    font-size: 20px;
-}
+    --text-accent:                   var(--orange);
+    --text-accent-hover:             var(--frost2);
 
-#write h5 {
-    font-size: 16px;
-}
+    --tag-color:                     var(--dark3);
+    --tag-background:                var(--light1);
+    --tag-background-hover:          var(--light0);
 
-#write hr {
-    width: 60%;
-    text-align:center;
-    border-bottom: solid 1.8px var(--main-color);
-    margin: 4.5em auto;
-}
+    --titlebar-text-color-focused:   var(--red);
 
+    /*--inline-title-color:            var(--yellow);*/
+    --inline-title-color:            rgb(10 60 235);
 
-#write img {
-    border-radius: 1em;
-    box-shadow: 0 0 8px 3px rgba(134, 136, 137, 0.8);
-    transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-}
+    --bold-color:                    var(--green);
+    --italic-color:                  var(--green);
 
-#write img:hover {
-    box-shadow: 0 0 25px 3px var(--shadow-color);
-    transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-}
+    --checkbox-color:                var(--frost2);
+    --checkbox-color-hover:          var(--frost2);
+    --checkbox-border-color:         var(--frost2);
+    --checkbox-border-color-hover:   var(--frost2);
+    --checklist-done-color:          rgba(var(--dark2_x), 0.4);
 
+    --table-header-background:       rgba(var(--light2_x), 0.2);
+    --table-header-background-hover: var(--frost2);
+    --table-row-even-background:     rgba(var(--light2_x), 0.4);
+    --table-row-odd-background:      rgba(var(--light2_x), 0.8);
+    --table-row-background-hover:    var(--frost2);
 
-#write blockquote {
-    padding: 10px 10px;
-    font-size: var(--quote-title-font-size);
-    color: var(--blockquote-color);
-    border-left: 6px solid var(--main-color);
-    background: var(--light-color);
-    border-radius : 0.5em;
-    font-family: var(--blockquote-font);
-}
+    --text-selection:                rgba(var(--red_x), 0.6);
+    --flashing-background:           rgba(var(--red_x), 0.3);
 
-#write blockquote h1 {
-    font-weight: 200;
-    font-size: var(--quote-tag-font-size);
-    border-bottom: none;
-}
+    --code-normal:                   var(--frost1);
+    --code-background:               var(--light2);
 
-#write blockquote h1::before {
-    content: "Tips";
-    background-color: var(--main-color);
-    color: white;
-    font-size: var(--quote-tag-font-size);
-    border-radius: .3em;
-    padding: 3px 7px;
-    margin-right: 15px;
-}
+    --mermaid-note:                  var(--frost0);
+    --mermaid-loopline:              var(--frost1);
 
-#write blockquote h2 {
-    font-weight: 200;
-    font-size: var(--quote-tag-font-size);
-}
+    --icon-color-hover:              var(--red);
+    --icon-color-focused:            var(--frost3);
 
-#write blockquote h2::before {
-    content: "Warning";
-    background-color: rgb(207, 210, 16);
-    color: white;
-    font-size: var(--quote-tag-font-size);
-    border-radius: .3em;
-    padding: 3px 7px;
-    margin-right: 15px;
-}
+    --nav-item-color-hover:          var(--red);
+    --nav-item-color-active:         var(--frost2);
+    --nav-file-tag:                  rgba(var(--orange_x), 0.9);
 
-#write blockquote h3 {
-    font-weight: 200;
-    font-size: var(--quote-tag-font-size);
-}
+    --graph-line:                    var(--light0);
+    --graph-node:                    var(--dark3);
+    --graph-node-tag:                var(--red);
+    --graph-node-attachment:         var(--green);
 
-#write blockquote h3::before {
-    content: "Error";
-    background-color: rgb(224, 66, 66);
-    color: white;
-    font-size: var(--quote-tag-font-size);
-    border-radius: .3em;
-    padding: 3px 7px;
-    margin-right: 15px;
-}
+    --calendar-hover:                var(--red);
+    --calendar-background-hover:     var(--light0);
+    --calendar-week:                 var(--orange);
+    --calendar-today:                var(--orange);
 
-#write blockquote h4 {
-    font-weight: 200;
-    font-size: var(--quote-tag-font-size);
-}
+    --dataview-key:                  var(--text-faint);
+    --dataview-key-background:       rgba(var(--frost2_x), 0.3);
+    --dataview-value:                var(--text-faint);
+    --dataview-value-background:     rgba(var(--red_x), 0.3);
 
-#write blockquote h4::before {
-    content: "Remind";
-    background-color: var(--shadow-color);
-    color: white;
-    font-size: var(--quote-tag-font-size);
-    border-radius: .3em;
-    padding: 3px 7px;
-    margin-right: 15px;
-}
-
-#write blockquote h5 {
-    font-weight: 200;
-    font-size: var(--quote-tag-font-size);
-}
-
-#write blockquote h5::before {
-    content: "Remind";
-    background-color: var(--shadow-color);
-    color: white;
-    font-size: var(--quote-tag-font-size);
-    border-radius: .3em;
-    padding: 3px 7px;
-    margin-right: 15px;
+    --tab-text-color-focused-active:         var(--frost2);
+    --tab-text-color-focused-active-current: var(--red);
 }
 
 
-/* code block */
-#write pre.md-fences {
-	padding: 1rem 0.5rem 1rem;
-	display: block;
-	-webkit-overflow-scrolling: touch;
-	/* box-shadow: 0 0 6px 2px rgba(151, 151, 151, 0.9); */
-    /* border-top: rgb(51, 51, 51) solid 35px; */
-    border-top: rgb(244, 244, 244) solid 35px;
-    background-color: rgb(244, 244, 244);
-}
 
-
-pre.md-fences::before {
-	content: ' ';
-	background: var(--main-color);
-	box-shadow: 23px 0 rgb(128, 128, 128), 45px 0 gray;
-	border-radius: 50%;
-	margin-top: -2.3rem;
-	position: absolute;
-	left: 15px;
-	height: 12px;
-	width: 12px;
-}
-
-#write pre.md-fences {
-	line-height: 1.5rem;
-	font-size: .9rem;
-	font-weight: 300;
-	border-radius: .7em;
-    font-family: var(--monospace) !important;
-}
 
 /* inline code */
 code {
@@ -277,14 +331,7 @@ code {
     border-radius: 8px;
 }
 
-#write blockquote code {
-    margin: 0 2px;
-    padding: 4px 6px;
-    color: white;
-    white-space: pre-wrap;
-    background: var(--main-color);
-    border-radius: 8px;
-}
+
 
 kbd,
 samp,
@@ -310,45 +357,7 @@ pre.md-meta-block {
 }
 
 
-/* Math */
-#math-inline-preview-content .MathJax {
-    color: white !important;
-}
 
-/* table */
-#write table
-{
-    width: 95%;
-    border-collapse: collapse;
-    text-align: center;
-    font-family: var(--monospace);
-    margin: 20px;
-}
-#write table td, table th
-{
-    border: 1px solid transparent;
-    color: rgb(18, 18, 18);
-    height: 30px;
-    padding: 10px;
-    border-radius: .5em;
-    transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-}
-#write table td {
-    font-family: var(--title-font);
-}
-#write table thead th
-{
-    background-color: var(--shadow-color);
-    font-size: 20px;
-    color: white;
-    font-weight: bolder;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px;
-}
 table tr:nth-child(odd)
 {
     background: white;
@@ -445,14 +454,6 @@ input[type='checkbox']:hover:before {
 
 
 
-
-#footer-word-count-label {
-    font-family: var(--title-font) !important;
-    color: white;
-    padding: 1px 8px;
-    border-radius: 1.0em;
-    background-color: var(--main-color);
-}
 
 /* bg color when text is selected */
 div::selection {
@@ -626,16 +627,6 @@ color: white;
 
 }
 
-
-#megamenu-content {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-#megamenu-menu-panel {
-    font-family: var(--title-font);
-    padding: 10px;
-}
-
 .megamenu-menu-panel {
     padding: 10px;
 }
@@ -656,43 +647,7 @@ color: white;
     text-align:center;
     border-bottom: solid 3px var(--main-color);
 }
-#megamenu-menu-sidebar {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--sidebar-font-color);
-}
 
-#megamenu-back-btn {
-    border-radius: 1.2em;
-    color: var(--main-color);
-    transition: all linear .3s;
-    padding: 0 0 10px;
-}
-
-#megamenu-back-btn:hover {
-    background-color: var(--main-color);
-    color: white;
-    border: 2px solid white;
-    transition: all linear .3s;
-}
-
-#megamenu-menu-list > li {
-    transition: all linear .3s;
-}
-
-#megamenu-menu-list > li:hover {
-    transition: all linear .3s;
-    border-top-left-radius: 1.2em;
-    border-bottom-left-radius: 1.2em;
-}
-
-#megamenu-menu-list > li:focus {
-    transition: all linear .3s;
-    color : white;
-    background-color: var(--shadow-color);
-    width: fit-content;
-    border-top-right-radius: 1.2em;
-    border-bottom-right-radius: 1.2em;
-}
 
 .dropdown-menu .divider {
     width: 30%;
@@ -721,37 +676,6 @@ color: white;
 }
 
 
-/* open */
-#m-open-local,
-#m-import-local {
-    border-radius: 1.2em;
-}
-
-#m-open-local:hover,
-#m-import-local:hover {
-    border: 1px solid var(--shadow-color);
-}
-
-#recent-file-panel-search-input {
-    border-radius: 1.2em;
-    transition: all linear .3s;
-    font-family: var(--title-font);
-}
-#recent-file-panel-action-btn {
-    border-radius: 1.2em;  
-}
-
-#recent-file-panel-search-input:hover {
-    transition: all linear .3s;
-    box-shadow: 0 0 10px 3px var(--shadow-color);
-}
-
-#recent-file-panel-search-input:focus {
-    transition: all linear .3s;
-    color: white;
-    border: none;
-    background-color: var(--shadow-color);
-}
 
 /* side bar Ctrl Shift 2 */
 .info-panel-tab-border {
@@ -800,19 +724,9 @@ color: white;
 }
 
 
-#file-library-search-input {
-    border-radius: .5em;
-}
-
-#file-library-search-input:focus {
-    border: 2px solid var(--main-color);
-}
 
 .info-panel-tab-border {
     display: none;
-}
-div#file-library-list-children {
-    transition: all linear .3s;
 }
 
 .file-list-item.active {
@@ -837,21 +751,6 @@ div#file-library-list-children {
 /* theme */
 .theme-preview-div.active, .theme-preview-div.active:hover {
     border-color: var(--main-color);
-}
-#theme-preview-grid {
-    max-width: 100% !important;
-}
-#open-theme-folder-btn {
-    transition: all .3s;
-    border-radius: 2em;
-    border: none;
-    color: white !important;
-    background-color: var(--main-color);
-}
-#open-theme-folder-btn:hover {
-    transition: all .3s;
-    color: white !important;
-    background-color: var(--shadow-color);
 }
 
 /* export */
@@ -928,4 +827,45 @@ div#file-library-list-children {
 .modal-content {
     border-radius: 1.5em;
     border: none;
+}
+
+
+code[class*="language-"],
+pre[class*="language-"]
+{
+    line-height: var(--line-height-tight) !important;
+    /*设置代码块在只读模式下边框圆角*/
+    border-radius: 1em;
+}
+
+/*设置img边框圆角*/
+img {
+    border-radius: 1em !important;
+}
+
+
+/*设置代码块上边框圆角*/
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg{
+    border-radius:16px 16px 0 0;
+}
+/*设置代码块下边框圆角*/
+.cm-s-obsidian div.HyperMD-codeblock-end-bg{
+    border-radius:0 0 16px 16px;
+}
+
+/*.cm-hmd-codeblock{
+    color: rgb(13 13 13);
+}*/
+
+/*设置代码块中部分关键字颜色*/
+.token.atrule, .token.attr-value, .token.builtin, .token.function, .token.class-name, .token.property-access, .cm-builtin, .cm-property, .cm-attribute, .cm-type {
+    color: rgb(6 18 244);
+}
+
+.token.comment, .token.prolog, .token.doctype, .token.cdata, .cm-comment, .cm-meta {
+    color: rgb(247 8 50);
+}
+
+.token.entity, .token.parameter, .token.property, .token.url, .language-css .token.string, .style .token.string, .token.variable, .cm-link, .cm-variable, .cm-variable-2, .cm-variable-3 {
+    color: rgb(13 13 13);
 }
